@@ -2,3 +2,5 @@
 # MSSC Beer Service
 
 Spring Boot Microservice example
+
+In order to generate documentation reports run mvn clean package
