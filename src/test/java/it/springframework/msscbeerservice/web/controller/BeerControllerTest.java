@@ -18,6 +18,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.util.StringUtils;
 
 import java.math.BigDecimal;
+import java.time.OffsetDateTime;
 import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -59,10 +60,10 @@ class BeerControllerTest {
                                 parameterWithName("iscold").description("Is Beer Cold Query Param")
                         ),
                         responseFields(
-                                fieldWithPath("id").description("Id of Beer"),
+                                fieldWithPath("id").description("Id of Beer").type(UUID.class),
                                 fieldWithPath("version").description("Version Number"),
-                                fieldWithPath("createdDate").description("Date Created"),
-                                fieldWithPath("lastModifiedDate").description("Date Updated"),
+                                fieldWithPath("createdDate").description("Date Created").type(OffsetDateTime.class),
+                                fieldWithPath("lastModifiedDate").description("Date Updated").type(OffsetDateTime.class),
                                 fieldWithPath("beerName").description("Beer Name"),
                                 fieldWithPath("beerStyle").description("Beer Style"),
                                 fieldWithPath("upc").description("UPC of Beer"),
